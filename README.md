@@ -31,7 +31,8 @@ cd devopsjourney
 ### 2. Build and run with Docker
 
 ```bash
-docker-compose up --build
+docker build -t my-app .
+docker run --rm -p 3000:3000 my-app
 ```
 
 ### 3. Running tests
