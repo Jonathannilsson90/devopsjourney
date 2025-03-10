@@ -1,6 +1,6 @@
 import {fireEvent, render, screen} from '@testing-library/react'
 import App from './App'
-import { expect } from 'vitest';
+import { expect, it } from 'vitest';
 
 it('Should render h1 with Vite + React', () => {
   render(<App/>);

@@ -3,9 +3,9 @@ FROM node:18-alpine AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
-RUN npm run test
 COPY . .
 RUN npm run build
+RUN npm run test
 #Prod stage
 FROM nginx:stable-alpine AS production
 COPY --from=build /app/dist /usr/share/nginx/html
