@@ -1,54 +1,44 @@
-# React + TypeScript + Vite
+# DevOps Docker and Test Experimentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is dedicated to experimenting with **DevOps**, **Docker**, and **testing** in the context of modern web development. The goal is to explore the integration of containerization, automation, and testing to improve development workflows, scalability, and reliability.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In this project, we are experimenting with:
+- **Docker**: Building and containerizing web applications to ensure consistency across development, staging, and production environments.
+- **DevOps practices**: Setting up Continuous Integration (CI) and Continuous Deployment (CD) pipelines using modern tools and services.
+- **Testing**: Implementing automated tests (unit for now) to ensure the stability and reliability of the application.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Docker**: Containerizing the application for a consistent development and production environment.
+- **Vitest**: Using Vitest for unit and integration testing.
+- **React**: A modern JavaScript library for building user interfaces.
+- **Vite**: A fast build tool for modern web applications.
+- **Nginx**: Serving the built React application for production.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+To get started with this project, you'll need to have **Docker** installed on your local machine. Once you have Docker installed, you can build and run the application using the following commands:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Jonathannilsson90/devopsjourney.git
+cd devopsjourney
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Build and run with Docker
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+docker-compose up --build
 ```
+
+### 3. Running tests
+
+```bash
+npm run test
+```
+
+### CI/CD pipeline
+This project includes a basic CI/CD pipeline setup with Docker. The pipeline automates testing, building, and deployment of the app to ensure consistent releases.
